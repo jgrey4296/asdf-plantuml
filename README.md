@@ -1,8 +1,8 @@
 <div align="center">
 
-# asdf-blah [![Build](https://github.com/jgrey4296/asdf-blah/actions/workflows/build.yml/badge.svg)](https://github.com/jgrey4296/asdf-blah/actions/workflows/build.yml) [![Lint](https://github.com/jgrey4296/asdf-blah/actions/workflows/lint.yml/badge.svg)](https://github.com/jgrey4296/asdf-blah/actions/workflows/lint.yml)
+# asdf-plantuml[![Build](https://github.com/jgrey4296/asdf-plantuml/actions/workflows/build.yml/badge.svg)](https://github.com/jgrey4296/asdf-plantuml/actions/workflows/build.yml) [![Lint](https://github.com/jgrey4296/asdf-plantuml/actions/workflows/lint.yml/badge.svg)](https://github.com/jgrey4296/asdf-plantuml/actions/workflows/lint.yml)
 
-[blah](https://github.com/jgrey4296/blah) plugin for the [asdf version manager](https://asdf-vm.com).
+[plantuml](https://plantuml.com) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -25,25 +25,25 @@
 Plugin:
 
 ```shell
-asdf plugin add blah
+asdf plugin add plantuml
 # or
-asdf plugin add blah https://github.com/jgrey4296/asdf-blah.git
+asdf plugin add plantuml https://github.com/jgrey4296/asdf-plantuml.git
 ```
 
-blah:
+plantuml:
 
 ```shell
 # Show all installable versions
-asdf list-all blah
+asdf list-all plantuml
 
 # Install specific version
-asdf install blah latest
+asdf install plantuml latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global blah latest
+asdf global plantuml latest
 
-# Now blah commands are available
-blah --help
+# Now plantuml commands are available
+plantuml --help
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -53,7 +53,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/jgrey4296/asdf-blah/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/jgrey4296/asdf-plantuml/graphs/contributors)!
 
 # License
 
