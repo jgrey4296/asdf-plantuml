@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# https://asdf-vm.com/plugins/create.html#extension-commands-for-asdf-cli
+set -euo pipefail
+
+# echo "installed to: $ASDF_INSTALL_PATH"
+# echo "version: $PLANTUML_TARGET_VERSION"
+
+if [[ $# -eq 0 ]]; then
+    java -jar "$ASDF_INSTALL_PATH/$PLANTUML_TARGET_VERSION/bin/plantuml-$PLANTUML_TARGET_VERSION.jar" -help
+else
+    java -jar "$ASDF_INSTALL_PATH/$PLANTUML_TARGET_VERSION/bin/plantuml-$PLANTUML_TARGET_VERSION.jar" "$@"
+fi
+

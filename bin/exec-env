@@ -1,12 +1,6 @@
 # #  exec-env -*- mode: sh -*-
-# https://asdf-vm.com/plugins/create.html#bin-exec-env
-# prepare the environment for executing tool shims
-#
 
 set -euo pipefail
 
-function export_plantuml_base() {
-    return
-}
-
-export_plantuml_base
+PLANTUML_TARGET_VERSION=$(asdf current | grep plantuml | awk '{print $2}')
+export PLANTUML_TARGET_VERSION
