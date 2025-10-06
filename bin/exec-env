@@ -1,0 +1,12 @@
+# #  exec-env -*- mode: sh -*-
+# https://asdf-vm.com/plugins/create.html#bin-exec-env
+# prepare the environment for executing tool shims
+#
+
+set -euo pipefail
+
+function export_plantuml_base() {
+    return
+}
+
+export_plantuml_base

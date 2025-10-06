@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# https://asdf-vm.com/plugins/create.html#bin-list-all
+# # List all installable versions
+# must print a string of space separated versions, newest last
 
 set -euo pipefail
 
