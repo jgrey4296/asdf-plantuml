@@ -15,18 +15,17 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`, and [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html).
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `grep`
+- `awk`
+- `java`
+- `asdf` version 0.18.0
 
 # Install
 
 Plugin:
 
 ```shell
-asdf plugin add plantuml
-# or
 asdf plugin add plantuml https://github.com/jgrey4296/asdf-plantuml.git
 ```
 
@@ -34,13 +33,13 @@ plantuml:
 
 ```shell
 # Show all installable versions
-asdf list-all plantuml
+asdf list all plantuml
 
 # Install specific version
-asdf install plantuml latest
+asdf install plantuml 1.2025.8
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global plantuml latest
+asdf set plantuml 1.2025.8
 
 # Now plantuml commands are available
 plantuml --help
@@ -48,12 +47,6 @@ plantuml --help
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
-
-# Contributing
-
-Contributions of any kind welcome! See the [contributing guide](contributing.md).
-
-[Thanks goes to these contributors](https://github.com/jgrey4296/asdf-plantuml/graphs/contributors)!
 
 # License
 
