@@ -1,6 +1,0 @@
-# #  exec-env -*- mode: sh -*-
-
-set -euo pipefail
-
-PLANTUML_TARGET_VERSION=$(asdf current | grep plantuml | awk '{print $2}')
-export PLANTUML_TARGET_VERSION

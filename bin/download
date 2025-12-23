@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # https://asdf-vm.com/plugins/create.html#bin-download
-# # Download a specified version
+# # Download a specified ASDF_INSTALL_VERSION
 # must download to ASDF_DOWNLOAD_PATH
 # on failure, clean download path
 
@@ -20,6 +20,13 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 source "${plugin_dir}/lib/utils.bash"
 
 release_file="$TOOL_NAME-$ASDF_INSTALL_VERSION.jar"
+url="$GH_REPO/releases/download/v${ASDF_INSTALL_VERSION}/${release_file}"
 
 # Download tar.gz file to the download directory
-download_release "$ASDF_INSTALL_VERSION" "$release_file"
+mkdir -p "$ASDF_DOWNLOAD_PATH"
+
+echo "* Downloading $TOOL_NAME release $version..."
+echo "* To: $ASDF_DOWNLOAD_PATH/$release_file"
+curl "${curl_opts[@]}" -o "$ASDF_DOWNLOAD_PATH/${TOOL_NAME}.jar" -C - "$url" || fail "Could not download $url"
+
+test -f "$ASDF_DOWNLOAD_PATH/${TOOL_NAME}.jar" || fail "expected download file did not download"
