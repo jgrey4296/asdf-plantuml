@@ -25,7 +25,7 @@ url="$GH_REPO/releases/download/v${ASDF_INSTALL_VERSION}/${release_file}"
 # Download tar.gz file to the download directory
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-echo "* Downloading $TOOL_NAME release $version..."
+echo "* Downloading $TOOL_NAME release $ASDF_INSTALL_VERSION..."
 echo "* To: $ASDF_DOWNLOAD_PATH/$release_file"
 curl "${curl_opts[@]}" -o "$ASDF_DOWNLOAD_PATH/${TOOL_NAME}.jar" -C - "$url" || fail "Could not download $url"
 

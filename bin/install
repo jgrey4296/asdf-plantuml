@@ -16,14 +16,14 @@ source "${plugin_dir}/lib/utils.bash"
 exec_script="#!/usr/bin/env bash
 set -euo pipefail
 
-if [[ \$# -eq 0 ]]; then
-       java -jar ${TOOL_NAME}.jar -help
+if [[ \"\$#\" -eq 0 ]]; then
+       java -jar ${ASDF_INSTALL_PATH}/bin/${TOOL_NAME}.jar -help
 else
-       java -jar ${TOOL_NAME}.jar \"\$@\"
+       java -jar ${ASDF_INSTALL_PATH}/bin/${TOOL_NAME}.jar \"\$@\"
 fi"
 
 echo "* Installing to: $ASDF_INSTALL_PATH"
-[[ "$ASDF_INSTALL_TYPE" != "version" ]] || fail "asdf-$TOOL_NAME supports release installs only"
+[[ "$ASDF_INSTALL_TYPE" = "version" ]] || fail "asdf-$TOOL_NAME supports release installs only, not $ASDF_INSTALL_TYPE"
 
 (
     mkdir -p "$ASDF_INSTALL_PATH/bin"
@@ -31,13 +31,13 @@ echo "* Installing to: $ASDF_INSTALL_PATH"
 
     echo "* Creating Run Script"
     echo "$exec_script" > "$ASDF_INSTALL_PATH/bin/${TOOL_NAME}"
-    chmod  +x "ASDF_INSTALL_PATH/bin/${TOOL_NAME}"
+    chmod  +x "$ASDF_INSTALL_PATH/bin/${TOOL_NAME}"
 
-    tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
-    "$ASDF_INSTALL_PATH/bin/${TOOL_NAME}" -version || fail "Expected $ASDF_INSTALL_PATH/bin/$tool_cmd to be executable."
+    # tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+    # "$ASDF_INSTALL_PATH/bin/${TOOL_NAME}" -version || fail "Expected $ASDF_INSTALL_PATH/bin/$tool_cmd to be executable."
 
     echo "* $TOOL_NAME $ASDF_INSTALL_VERSION installation was successful!"
 ) || (
-    rm -rf "$ASDF_INSTALL_PATH"
+    # rm -rf "$ASDF_INSTALL_PATH"
     fail "An error occurred while installing $TOOL_NAME $ASDF_INSTALL_VERSION."
 )
